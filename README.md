@@ -14,6 +14,9 @@ This is Git Style Guide inspired by the [git man pages](http://git-scm.com/doc) 
 
 ## 1. Setup Workspace
 Setup your terminal with a colorful custom bash prompt to see git status easily look at my custom prompt:
+
+![terminal](/files/img.png)
+
 If you want to obtain this custom prompt do the followings:
   1. #### Downloading necessary files
     * Save [this file]('/files/git-completion.bash') in your home directory with the name `git-completion.bash`.
