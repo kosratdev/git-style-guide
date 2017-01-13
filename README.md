@@ -2,8 +2,8 @@
 
 # Contents
 1. [Introduction](#introduction)
-2. [Setup Workspace](#setup workspace)
-3. [Repository Name](#repository name)
+2. [Setup Workspace](#setup-workspace)
+3. [Repository Name](#repository-name)
 4. [Branches](#branches)
 5. [Commits](#commits)
   1. [Messages](#messages)
@@ -19,12 +19,12 @@ Setup your terminal with a colorful custom bash prompt to see git status easily 
 ![terminal](/files/img.png)
 
 If you want to obtain this custom prompt do the followings:
-  1. #### Downloading necessary files
-    * Save [this file]('/files/git-completion.bash') in your home directory with the name `git-completion.bash`.
-    * Save [this file]('/files/git-prompt.sh') in your home directory with the name `git-prompt.sh`.
-    * Download [this file (bash_profile_file)]('/files/bash_profile_file').
+  1. Downloading necessary files
+    * Save [this file](files/git-completion.bash) in your home directory with the name `git-completion.bash`.
+    * Save [this file](files/git-prompt.sh) in your home directory with the name `git-prompt.sh`.
+    * Download [this file (bash_profile_file)](files/bash_profile_file).
     * If you already have a file in your home directory named `.bash_profile`, copy the content from `bash_profile_file` and paste it at the bottom of `.bash_profile`. Otherwise, move `bash_profile_file` to your home directory and rename it to `.bash_profile`. If you use Linux, you may need to name this file `.bashrc` instead of `.bash_profile`.(If you're curious to learn more about how bash prompts work, see [this page](http://www.cyberciti.biz/tips/howto-linux-unix-bash-shell-setup-prompt.html).)
-  2. #### Making Git configurations
+  2. Making Git configurations
     Run the following Git configuration commands. The first one will need to be modified if you are using a text editor other than Vim. See [this page](https://help.github.com/articles/associating-text-editors-with-git/) for the correct command for a couple of other popular text editors. For any other editor, you'll need to enter the command you use to launch that editor from Git Bash.
     ```shell
     git config --global core.editor "vim"
