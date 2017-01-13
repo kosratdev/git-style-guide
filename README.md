@@ -1,18 +1,19 @@
 # Git Style Guide
 
 # Contents
-0. [Introduction](#introduction)
-1. [Setup Workspace](#setup workspace)
-2. [Branches](#branches)
-3. [Commits](#commits)
+1. [Introduction](#introduction)
+2. [Setup Workspace](#setup workspace)
+3. [Repository Name](#repository name)
+4. [Branches](#branches)
+5. [Commits](#commits)
   1. [Messages](#messages)
-4. [Merging](#merging)
-5. [References](#references)
+6. [Merging](#merging)
+7. [References](#references)
 
-## 0. Introduction
+## Introduction
 This is Git Style Guide inspired by the [git man pages](http://git-scm.com/doc) and various practices popular among the community. If you are not good at using Git look at [this cheat sheet](https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf) or take [this course](https://www.udacity.com/course/how-to-use-git-and-github--ud775)
 
-## 1. Setup Workspace
+## Setup Workspace
 Setup your terminal with a colorful custom bash prompt to see git status easily look at my custom prompt:
 
 ![terminal](/files/img.png)
@@ -32,14 +33,14 @@ If you want to obtain this custom prompt do the followings:
     ```
     You'll need to close and re-open the terminal before all your changes take effect.
 
-## 1. Repository Name
+## Repository Name
 Good naming convention would be :
 * Use lowercase
 * Separate word with hyphens `-`.
 
 There is no standard convention about letter case for naming Git repositories. But a good reason to stick to lowercase is that repository names are often seen in URLs that may be case insensitive or even converted to lower case (it happened to GitLab or Jira users for example in the past).
 
-## 1. Branches
+## Branches
 * Choose *short* and *descriptive* names:
 
   ```shell
@@ -84,7 +85,7 @@ There is no standard convention about letter case for naming Git repositories. B
   $ git branch --merged | grep -v "\*"
   ```
 
-## 2. Commits
+## Commits
 
   * Each commit should be a single *logical change*. Don't make several *logical changes* in one commit. For example, if a patch fixes a bug and optimizes the performance of a feature, split it into two separate commits.
 
