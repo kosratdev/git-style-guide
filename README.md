@@ -11,7 +11,7 @@
 7. [References](#references)
 
 ## Introduction
-This is Git Style Guide inspired by the [git man pages](http://git-scm.com/doc) and various practices popular among the community. If you are not good at using Git look at [this cheat sheet](https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf) or take [this course](https://www.udacity.com/course/how-to-use-git-and-github--ud775)
+This is Git Style Guide inspired by the [git man pages](http://git-scm.com/doc) and various practices popular among the community. If you are not familiar with Git take [this course](https://www.udacity.com/course/how-to-use-git-and-github--ud775) or look at [this cheat sheet](https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf). 
 
 ## Setup Workspace
 Setup your terminal with a colorful custom bash prompt to see git status easily look at my custom prompt:
@@ -19,12 +19,16 @@ Setup your terminal with a colorful custom bash prompt to see git status easily 
 ![terminal](/files/img.png)
 
 If you want to obtain this custom prompt do the followings:
-  1. Downloading necessary files
+  
+  1. **Use these files**
+  
     * Save [this file](files/git-completion.bash) in your home directory with the name `git-completion.bash`.
     * Save [this file](files/git-prompt.sh) in your home directory with the name `git-prompt.sh`.
-    * Download [this file (bash_profile_file)](files/bash_profile_file).
-    * If you already have a file in your home directory named `.bash_profile`, copy the content from `bash_profile_file` and paste it at the bottom of `.bash_profile`. Otherwise, move `bash_profile_file` to your home directory and rename it to `.bash_profile`. If you use Linux, you may need to name this file `.bashrc` instead of `.bash_profile`.(If you're curious to learn more about how bash prompts work, see [this page](http://www.cyberciti.biz/tips/howto-linux-unix-bash-shell-setup-prompt.html).)
-  2. Making Git configurations
+    * Save [this file (bash_profile_file)](files/bash_profile_file) in your home directory.
+    * If you already have a file in your home directory named `.bash_profile`, copy the content from `bash_profile_file` and paste it at the bottom of `.bash_profile`. Otherwise, rename `bash_profile_file` to `.bash_profile`. If you use Linux, you may need to name this file `.bashrc` instead of `.bash_profile`.(If you're curious to learn more about how bash prompts work, see [this page](http://www.cyberciti.biz/tips/howto-linux-unix-bash-shell-setup-prompt.html).)
+  
+  2. **Making Git configurations**
+  
     Run the following Git configuration commands. The first one will need to be modified if you are using a text editor other than Vim. See [this page](https://help.github.com/articles/associating-text-editors-with-git/) for the correct command for a couple of other popular text editors. For any other editor, you'll need to enter the command you use to launch that editor from Git Bash.
     ```shell
     git config --global core.editor "vim"
@@ -35,7 +39,7 @@ If you want to obtain this custom prompt do the followings:
 
 ## Repository Name
 Good naming convention would be :
-* Use lowercase
+* Use lowercase.
 * Separate word with hyphens `-`.
 
 There is no standard convention about letter case for naming Git repositories. But a good reason to stick to lowercase is that repository names are often seen in URLs that may be case insensitive or even converted to lower case (it happened to GitLab or Jira users for example in the past).
@@ -59,9 +63,7 @@ There is no standard convention about letter case for naming Git repositories. B
   # GitHub issue #15
   $ git checkout -b issue-15
   ```
-
-
-
+  
 * When several people are working on the *same* feature, it might be convenient
   to have *personal* feature branches and a *team-wide* feature branch.
   Use the following naming convention:
@@ -97,11 +99,17 @@ There is no standard convention about letter case for naming Git repositories. B
   * Commit *early* and *often*. Small, self-contained commits are easier to understand and revert when something goes wrong.
 
   * Commits should be ordered *logically*. For example, if *commit X* depends on changes done in *commit Y*, then *commit Y* should come before *commit X*.
+  
+  * If a commit is going to be squashed to another commit use the `--squash` and `--fixup` flags respectively, in order to make the intention clear:
 
-  Note: While working alone on a local branch that *has not yet been pushed*, it's fine to use commits as temporary snapshots of your work. However, it still holds true that you should apply all of the above *before* pushing it.
+    ```shell
+    $ git commit --squash f387cab2
+    ```
+
+    *(Tip: Use the `--autosquash` flag when rebasing. The marked commits will be squashed automatically.)*
 
 ### Messages
-* Use the editor, not the terminal, when writing a commit message:
+Use the editor, not the terminal, when writing a commit message:
 
   ```shell
   # good
@@ -112,17 +120,6 @@ There is no standard convention about letter case for naming Git repositories. B
   ```
 
   Committing from the terminal encourages a mindset of having to fit everything in a single line which usually results in non-informative, ambiguous commit messages.
-* If a *commit A* depends on *commit B*, the dependency should be stated in the message of *commit A*. Use the SHA1 when referring to commits.
-
-  Similarly, if *commit A* solves a bug introduced by *commit B*, it should also be stated in the message of *commit A*.
-
-* If a commit is going to be squashed to another commit use the `--squash` and `--fixup` flags respectively, in order to make the intention clear:
-
-    ```shell
-    $ git commit --squash f387cab2
-    ```
-
-    *(Tip: Use the `--autosquash` flag when rebasing. The marked commits will be squashed automatically.)*
 
 #### Message Structure
 A commit messages consists of three distinct parts separated by a blank line: the title, an optional body and an optional footer. The layout looks like this:
@@ -146,7 +143,7 @@ The type is contained within the title and can be one of these types:
 * **chore:** updating build tasks, package manager configs, etc; no production code change
 
 ##### The Subject
-Subjects should be no greater than 50 characters, should begin with a capital letter and do not end with a period.Use an imperative tone to describe what a commit does, rather than what it did. For example, use **change**; not changed or changes.
+Subjects should be no greater than 50 characters, should begin with a capital letter and do not end with a period. Use an imperative tone to describe what a commit does, rather than what it did. For example, use **change**; not changed or changes.
 
 ##### The Body
 Not all commits are complex enough to warrant a body, therefore it is optional and only used when a commit requires a bit of explanation and context. Use the body to explain the **what** and **why** of a commit, not the how.
